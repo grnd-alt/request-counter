@@ -1,0 +1,210 @@
+{
+  "reqId": "iCLVpT0162voFOw1uJiA",
+  "level": 3,
+  "time": "2024-05-02T13:38:25+00:00",
+  "remoteAddr": "",
+  "user": "--",
+  "app": "",
+  "method": "",
+  "url": "--",
+  "message": "Exception thrown:OCA\\Circles\\Tools\\Exceptions\\RequestNetworkException",
+  "userAgent": "--",
+  "version": "30.0.0.0",
+  "exception": {
+    "Exception": "OCA\\Circles\\Tools\\Exceptions\\RequestNetworkException",
+    "Message": "",
+    "Code": 0,
+    "Trace": [
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/apps/circles/lib/Service/FederatedEventService.php",
+        "line": 443,
+        "function": "doRequest",
+        "class": "OCA\\Circles\\Service\\FederatedEventService",
+        "type": "->",
+        "args": [["OCA\\Circles\\Tools\\Model\\NCRequest"]]
+      },
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/apps/circles/lib/Service/FederatedEventService.php",
+        "line": 188,
+        "function": "initBroadcast",
+        "class": "OCA\\Circles\\Service\\FederatedEventService",
+        "type": "->",
+        "args": [["OCA\\Circles\\Model\\Federated\\FederatedEvent"]]
+      },
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/apps/circles/lib/Service/SyncService.php",
+        "line": 462,
+        "function": "newEvent",
+        "class": "OCA\\Circles\\Service\\FederatedEventService",
+        "type": "->",
+        "args": [["OCA\\Circles\\Model\\Federated\\FederatedEvent"]]
+      },
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/apps/circles/lib/Listeners/GroupMemberAdded.php",
+        "line": 57,
+        "function": "groupMemberAdded",
+        "class": "OCA\\Circles\\Service\\SyncService",
+        "type": "->",
+        "args": ["BobsGroup", "bob"]
+      },
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/lib/private/EventDispatcher/ServiceEventListener.php",
+        "line": 86,
+        "function": "handle",
+        "class": "OCA\\Circles\\Listeners\\GroupMemberAdded",
+        "type": "->",
+        "args": [["OCP\\Group\\Events\\UserAddedEvent"]]
+      },
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/3rdparty/symfony/event-dispatcher/EventDispatcher.php",
+        "line": 230,
+        "function": "__invoke",
+        "class": "OC\\EventDispatcher\\ServiceEventListener",
+        "type": "->",
+        "args": [
+          ["OCP\\Group\\Events\\UserAddedEvent"],
+          "OCP\\Group\\Events\\UserAddedEvent",
+          ["Symfony\\Component\\EventDispatcher\\EventDispatcher"]
+        ]
+      },
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/3rdparty/symfony/event-dispatcher/EventDispatcher.php",
+        "line": 59,
+        "function": "callListeners",
+        "class": "Symfony\\Component\\EventDispatcher\\EventDispatcher",
+        "type": "->",
+        "args": [
+          [["Closure"], ["Closure"], ["Closure"], ["Closure"], ["Closure"]],
+          "OCP\\Group\\Events\\UserAddedEvent",
+          ["OCP\\Group\\Events\\UserAddedEvent"]
+        ]
+      },
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/lib/private/EventDispatcher/EventDispatcher.php",
+        "line": 86,
+        "function": "dispatch",
+        "class": "Symfony\\Component\\EventDispatcher\\EventDispatcher",
+        "type": "->",
+        "args": [
+          ["OCP\\Group\\Events\\UserAddedEvent"],
+          "OCP\\Group\\Events\\UserAddedEvent"
+        ]
+      },
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/lib/private/EventDispatcher/EventDispatcher.php",
+        "line": 98,
+        "function": "dispatch",
+        "class": "OC\\EventDispatcher\\EventDispatcher",
+        "type": "->",
+        "args": [
+          "OCP\\Group\\Events\\UserAddedEvent",
+          ["OCP\\Group\\Events\\UserAddedEvent"]
+        ]
+      },
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/lib/private/Group/Group.php",
+        "line": 189,
+        "function": "dispatchTyped",
+        "class": "OC\\EventDispatcher\\EventDispatcher",
+        "type": "->",
+        "args": [["OCP\\Group\\Events\\UserAddedEvent"]]
+      },
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/core/Command/Group/AddUser.php",
+        "line": 70,
+        "function": "addUser",
+        "class": "OC\\Group\\Group",
+        "type": "->",
+        "args": ["***sensitive parameters replaced***"]
+      },
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/apps/collectives/vendor/symfony/console/Command/Command.php",
+        "line": 298,
+        "function": "execute",
+        "class": "OC\\Core\\Command\\Group\\AddUser",
+        "type": "->",
+        "args": [
+          ["Symfony\\Component\\Console\\Input\\ArgvInput"],
+          ["Symfony\\Component\\Console\\Output\\ConsoleOutput"]
+        ]
+      },
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/core/Command/Base.php",
+        "line": 177,
+        "function": "run",
+        "class": "Symfony\\Component\\Console\\Command\\Command",
+        "type": "->",
+        "args": [
+          ["Symfony\\Component\\Console\\Input\\ArgvInput"],
+          ["Symfony\\Component\\Console\\Output\\ConsoleOutput"]
+        ]
+      },
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/apps/collectives/vendor/symfony/console/Application.php",
+        "line": 1040,
+        "function": "run",
+        "class": "OC\\Core\\Command\\Base",
+        "type": "->",
+        "args": [
+          ["Symfony\\Component\\Console\\Input\\ArgvInput"],
+          ["Symfony\\Component\\Console\\Output\\ConsoleOutput"]
+        ]
+      },
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/apps/collectives/vendor/symfony/console/Application.php",
+        "line": 301,
+        "function": "doRunCommand",
+        "class": "Symfony\\Component\\Console\\Application",
+        "type": "->",
+        "args": [
+          ["OC\\Core\\Command\\Group\\AddUser"],
+          ["Symfony\\Component\\Console\\Input\\ArgvInput"],
+          ["Symfony\\Component\\Console\\Output\\ConsoleOutput"]
+        ]
+      },
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/apps/collectives/vendor/symfony/console/Application.php",
+        "line": 171,
+        "function": "doRun",
+        "class": "Symfony\\Component\\Console\\Application",
+        "type": "->",
+        "args": [
+          ["Symfony\\Component\\Console\\Input\\ArgvInput"],
+          ["Symfony\\Component\\Console\\Output\\ConsoleOutput"]
+        ]
+      },
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/lib/private/Console/Application.php",
+        "line": 206,
+        "function": "run",
+        "class": "Symfony\\Component\\Console\\Application",
+        "type": "->",
+        "args": [
+          ["Symfony\\Component\\Console\\Input\\ArgvInput"],
+          ["Symfony\\Component\\Console\\Output\\ConsoleOutput"]
+        ]
+      },
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/console.php",
+        "line": 110,
+        "function": "run",
+        "class": "OC\\Console\\Application",
+        "type": "->",
+        "args": []
+      },
+      {
+        "file": "/home/runner/actions-runner/_work/collectives/collectives/occ",
+        "line": 11,
+        "args": [
+          "/home/runner/actions-runner/_work/collectives/collectives/console.php"
+        ],
+        "function": "require_once"
+      }
+    ],
+    "File": "/home/runner/actions-runner/_work/collectives/collectives/apps/circles/lib/Tools/Traits/TNCRequest.php",
+    "Line": 100,
+    "message": "",
+    "exception": {},
+    "CustomMessage": "Exceptionthrown: OCA\\Circles\\Tools\\Exceptions\\RequestNetworkException"
+  }
+}

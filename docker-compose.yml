@@ -1,0 +1,23 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - DB_URL=${DB_URL}
+  db:
+    image: postgres:13-alpine
+    restart: unless-stopped
+    volumes:
+      - /share/files/dbms/pg-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=query_counter
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres

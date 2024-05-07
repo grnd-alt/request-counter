@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 	"request-counter/database"
 
@@ -14,15 +15,17 @@ type Name struct {
 }
 
 func getRequests(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, database.GetRequests())
+	access_key := c.Param("access_key")
+	c.IndentedJSON(http.StatusOK, database.GetRequests(access_key))
 }
 
 func putRequest(c *gin.Context) {
-	err := database.PutRequest()
+	access_key := c.Param("access_key")
+	err := database.PutRequest(access_key)
 	if err != nil {
-		c.IndentedJSON(http.StatusInternalServerError, err)
+		c.HTML(http.StatusOK, "instantclose.html", gin.H{})
 	}
-	c.Status(http.StatusOK)
+	c.String(http.StatusOK, fmt.Sprint(database.GetRequestsCount(access_key)))
 }
 
 func main() {
@@ -30,8 +33,10 @@ func main() {
 
 	router := gin.Default()
 
-	router.GET("/requests", getRequests)
-	router.GET("/", putRequest)
+	router.LoadHTMLGlob("html/*")
+
+	router.GET("/requests/get/:access_key", getRequests)
+	router.GET("/requests/log/:access_key", putRequest)
 
 	router.Run("0.0.0.0:8080")
 }
